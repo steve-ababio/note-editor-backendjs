@@ -13,21 +13,20 @@ export async function createDatabaseConnection(){
     });
     try{
         await pool.connect();
+        pool.query( 
+            `CREATE TABLE IF NOT EXISTS notes 
+            (
+                id serial PRIMARY KEY,
+                note TEXT NOT NULL,
+                title VARCHAR(70) NOT NULL,
+                datecreated TIMESTAMP NOT NULL ,
+                lastmodified TIMESTAMP NOT NULL
+            )`        );
+        console.log("database successfully connected");
     }catch(error){
         throw error
-    }
-    pool.query( `CREATE TABLE IF NOT EXISTS incidents 
-        (
-            id serial PRIMARY KEY,
-            client_id INTEGER NOT NULL,
-            incident_desc VARCHAR(70) NOT NULL,
-            city VARCHAR(70) NOT NULL,
-            country VARCHAR(70) NOT NULL,
-            date DATE NOT NULL DEFAULT CURRENT_DATE,
-            weather JSON NOT NULL
-        )
-    `);
-    console.log("database successfully connected");
+    }  
+    
 }
 export function getPool(){
     return pool;

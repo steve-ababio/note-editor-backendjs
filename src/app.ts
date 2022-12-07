@@ -10,7 +10,7 @@ import {constants} from 'http2';
 const {HTTP_STATUS_INTERNAL_SERVER_ERROR} = constants; 
 createDatabaseConnection();
 const app = express();
-const PORT = 9000;
+const PORT = 8000;
 const server = http.createServer(app);
 app.use(cors({
     origin:"*",
