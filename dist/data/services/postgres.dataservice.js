@@ -3,4 +3,4 @@ class PostgresDataService {
         this._note = note;
     }
 }
-module.export = PostgresDataService;
+module.exports = PostgresDataService;
