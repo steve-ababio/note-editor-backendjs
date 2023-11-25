@@ -2,7 +2,7 @@ const pg = require("pg");
 const { Pool } = pg;
 let pool = null;
 
-module.exports = async function createDatabaseConnection() {
+async function createDatabaseConnection() {
     pool = new Pool({
         user: process.env.PG_USER,
         host: process.env.PG_HOST,
@@ -26,7 +26,7 @@ module.exports = async function createDatabaseConnection() {
         throw error;
     }
 }
-module.exports = function getPool() {
+function getPool() {
     return pool;
 }
 
