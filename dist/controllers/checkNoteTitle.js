@@ -1,8 +1,8 @@
-const { getPool } = require("../data/config/database.js");
-const { PostgresDataService } = require("../data/services/postgres.dataservice.js");
-const { PostgresStore } = require("../data/repository/postgres.repository.js");
-const { constants } =  require("http2");
-const { NoteService } = require('../logic/notes.js');
+const getPool = require("../data/config/database.js");
+const PostgresDataService = require("../data/services/postgres.dataservice.js");
+const PostgresStore = require("../data/repository/postgres.repository.js");
+const { constants } = require("http2");
+const NoteService = require('../logic/notes.js');
 const { HTTP_STATUS_ACCEPTED } = constants;
 
 module.exports = async function CheckNoteTitleAvailability(req, res, next) {
