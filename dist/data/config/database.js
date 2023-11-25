@@ -4,6 +4,7 @@ let pool = null;
 
 exports.createDatabaseConnection = async function createDatabaseConnection() {
     pool = new Pool({
+        ssl:true,
         user: process.env.POSTGRES_USER,
         host: process.env.POSTGRES_HOST,
         database: process.env.POSTGRES_DATABASE,
