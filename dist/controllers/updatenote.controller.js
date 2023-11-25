@@ -1,4 +1,4 @@
-const  getPool = "../data/config/database.js";
+const  {getPool} = "../data/config/database.js";
 const  PostgresDataService = require("../data/services/postgres.dataservice.js");
 const  PostgresStore = require("../data/repository/postgres.repository.js");
 const  { constants } = require("http2");
