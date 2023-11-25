@@ -29,3 +29,5 @@ module.exports = async function createDatabaseConnection() {
 module.exports = function getPool() {
     return pool;
 }
+
+module.export = {getPool,createDatabaseConnection}
