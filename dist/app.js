@@ -3,7 +3,7 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const  Routes  = require("./routes/route.js");
-const  createDatabaseConnection  = require("./data/config/database.js");
+const  {createDatabaseConnection}  = require("./data/config/database.js");
 const { constants } = require('http2');
 const { HTTP_STATUS_INTERNAL_SERVER_ERROR } = constants;
 
