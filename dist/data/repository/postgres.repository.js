@@ -1,4 +1,4 @@
-module.exports =  class PostgresStore {
+ class PostgresStore {
     constructor(pool) {
         this._pool = null;
         this._pool = pool;
@@ -28,3 +28,4 @@ module.exports =  class PostgresStore {
         return result !== null;
     }
 }
+module.exports = PostgresStore;
