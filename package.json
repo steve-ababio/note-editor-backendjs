@@ -2,7 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "module": "es6",
   "main": "index.js",
   "scripts": {

@@ -1,7 +1,8 @@
-import pg from "pg";
+const pg = require("pg");
 const { Pool } = pg;
 let pool = null;
-export async function createDatabaseConnection() {
+
+module.exports = async function createDatabaseConnection() {
     pool = new Pool({
         user: process.env.PG_USER,
         host: process.env.PG_HOST,
@@ -25,6 +26,6 @@ export async function createDatabaseConnection() {
         throw error;
     }
 }
-export function getPool() {
+module.exports = function getPool() {
     return pool;
 }

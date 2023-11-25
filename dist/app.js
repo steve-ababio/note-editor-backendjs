@@ -1,11 +1,12 @@
-import "dotenv/config";
-import express from "express";
-import http from "http";
-import cors from "cors";
-import { Routes } from "./routes/route.js";
-import { createDatabaseConnection } from "./data/config/database.js";
-import { constants } from 'http2';
+require("dotenv").config();
+const express = require("express");
+const http = require("http");
+const cors = require("cors");
+const  Routes  = require("./routes/route.js");
+const  createDatabaseConnection  = require("./data/config/database.js");
+const { constants } = require('http2');
 const { HTTP_STATUS_INTERNAL_SERVER_ERROR } = constants;
+
 createDatabaseConnection();
 const app = express();
 const PORT = 8000;

@@ -1,10 +1,11 @@
-import { getPool } from "../data/config/database.js";
-import { PostgresDataService } from "../data/services/postgres.dataservice.js";
-import { PostgresStore } from "../data/repository/postgres.repository.js";
-import { constants } from "http2";
-import { NoteService } from '../logic/notes.js';
+const { getPool } = require("../data/config/database.js");
+const { PostgresDataService } = require("../data/services/postgres.dataservice.js");
+const { PostgresStore } = require("../data/repository/postgres.repository.js");
+const { constants } = require("http2");
+const { NoteService } = require('../logic/notes.js');
 const { HTTP_STATUS_ACCEPTED } = constants;
-export default async function FetchAllNotes(req, res, next) {
+
+module.exports =  async function FetchAllNotes(req, res, next) {
     const pool = getPool();
     const noteservice = new NoteService(new PostgresDataService(new PostgresStore(pool)));
     try {

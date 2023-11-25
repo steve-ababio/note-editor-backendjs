@@ -1,4 +1,4 @@
-export class NoteService {
+module.exports = class NoteService {
     constructor(dataservice) {
         this._dataservice = dataservice;
     }
