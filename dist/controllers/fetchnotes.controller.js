@@ -6,6 +6,7 @@ const { NoteService } = require('../logic/notes.js');
 const { HTTP_STATUS_ACCEPTED } = constants;
 
 module.exports =  async function FetchAllNotes(req, res, next) {
+    console.log("fetching notes");
     const pool = getPool();
     const noteservice = new NoteService(new PostgresDataService(new PostgresStore(pool)));
     try {
