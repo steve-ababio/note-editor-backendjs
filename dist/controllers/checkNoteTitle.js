@@ -7,10 +7,12 @@ const { HTTP_STATUS_ACCEPTED } = constants;
 
 module.exports = async function CheckNoteTitleAvailability(req, res, next) {
     const noteTitle = req.params.title.replace(":", "");
+    console.log(noteTitle);
     const pool = getPool();
     const noteservice = new NoteService(new PostgresDataService(new PostgresStore(pool)));
     try {
         const note = await noteservice.FindNoteTitle(noteTitle);
+        console.log(note);
         if (note && note.length === 0) {
             return res.status(HTTP_STATUS_ACCEPTED).json({ isTitleAvailable: true });
         }
